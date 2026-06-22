@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fleetke-rental
+    runtime: docker
+    plan: free
+    healthCheckPath: /pages/browse.php
+    envVars:
+      - key: DB_HOST
+        sync: false        # Paste your full Aiven Service URI here
+      - key: DB_SSL
+        value: required
+      - key: APP_URL
+        sync: false        # e.g. https://fleetke-rental.onrender.com (optional)

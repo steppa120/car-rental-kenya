@@ -1,0 +1,16 @@
+# Environment & secrets
+.env
+*.env
+
+# Uploaded files (not persisted in git — use cloud storage in production)
+uploads/vehicle_images/*
+!uploads/vehicle_images/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# PHP temp files
+*.log
