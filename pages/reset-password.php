@@ -47,7 +47,7 @@ function get_flash() {
 $token = $_GET['token'] ?? '';
 if (empty($token)) {
     set_flash('danger', 'Invalid or missing reset token.');
-    redirect(APP_URL . '/login.php');
+    redirect(APP_URL . '/pages/login.php');
 }
 
 // Fetch token from database (not used, not expired)
@@ -63,7 +63,7 @@ $reset = $result->fetch_assoc();
 
 if (!$reset) {
     set_flash('danger', 'This reset link is invalid or has expired.');
-    redirect(APP_URL . '/login.php');
+    redirect(APP_URL . '/pages/login.php');
 }
 
 $user_id = $reset['user_id'];
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $conn->commit();
 
             set_flash('success', 'Your password has been reset successfully. You can now login.');
-            redirect(APP_URL . '/login.php');
+            redirect(APP_URL . '/pages/login.php');
         } catch (Exception $e) {
             $conn->rollback();
             $error = 'Something went wrong. Please try again.';
@@ -216,7 +216,7 @@ ob_end_clean();
             </form>
 
             <div class="back-link">
-                <a href="<?php echo APP_URL; ?>/login.php"><i class="fas fa-arrow-left"></i> Back to Login</a>
+                <a href="<?php echo APP_URL; ?>/pages/login.php"><i class="fas fa-arrow-left"></i> Back to Login</a>
             </div>
         </div>
     </div>

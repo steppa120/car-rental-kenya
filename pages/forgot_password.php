@@ -141,8 +141,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     $conn->commit();
 
-                    // Build reset link (reset-password.php should be in the root)
-                    $reset_link = APP_URL . '/reset-password.php?token=' . urlencode($token);
+                    // Build reset link
+                    $reset_link = APP_URL . '/pages/reset-password.php?token=' . urlencode($token);
 
                     // Send email
                     $to = $email;

@@ -43,7 +43,7 @@ function is_admin() {
 
 // Redirect if not admin
 if (!is_admin()) {
-    header('Location: ' . APP_URL . '/admin_login.php');
+    header('Location: admin_login.php');
     exit;
 }
 

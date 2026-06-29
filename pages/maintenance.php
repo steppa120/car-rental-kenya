@@ -10,7 +10,7 @@ require_once __DIR__ . '/../config/config.php';
 // Redirect if not logged in as admin
 if (!is_admin()) {
     set_flash('danger', 'You must be logged in as an admin to access that page.');
-    redirect(APP_URL . '/login.php');
+    redirect('/pages/login.php');
 }
 
 // Ensure maintenance table exists
